@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DemoParcialPeliculas", "DemoParcialPeliculas\DemoParcialPeliculas.vbproj", "{712D8B12-B563-4757-9BA9-49E5DF5B3903}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{712D8B12-B563-4757-9BA9-49E5DF5B3903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712D8B12-B563-4757-9BA9-49E5DF5B3903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712D8B12-B563-4757-9BA9-49E5DF5B3903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712D8B12-B563-4757-9BA9-49E5DF5B3903}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D673F4F-8624-4DD0-AEB2-5B98AC2E27D4}
+	EndGlobalSection
+EndGlobal
