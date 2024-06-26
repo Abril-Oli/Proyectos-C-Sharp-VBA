@@ -16,7 +16,7 @@ namespace VeterinariaService.DAO
         //----------------------------------- PREPARAR CONEXION -----------------------------------//
         private IDbConnection PrepararConexion()
         {
-            string conexionURL = "server=;Database=veterinaria_db;Integrated Security=true";
+            string conexionURL = "server=LAPTOP-M7QP70RN\\SQLEXPRESS;Database=VeterinariaDB;Integrated Security=true";
 
             SqlConnection conexion = new SqlConnection(conexionURL);
 

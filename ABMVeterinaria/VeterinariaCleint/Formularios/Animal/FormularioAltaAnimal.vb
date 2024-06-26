@@ -36,6 +36,24 @@ Public Class FormularioAltaAnimal
             Return
         End If
 
+        'Validacion - Existe el ClienteID' 
+        Dim daoClientes As New ClientesDAO
+        Dim listaClientes = daoClientes.GetAll()
+
+        Dim clienteExiste As Boolean = False
+        For Each cliente As Cliente In listaClientes
+            If cliente.ClienteID = clienteID Then
+                clienteExiste = True
+                Exit For
+            End If
+        Next
+
+        If Not clienteExiste Then
+            MessageBox.Show("ERROR: El cliente no existe, por favor ingrese un cliente existente.")
+            Return
+        End If
+
+
         'Validacion de especie'
         Dim daoEspecies As New EspeciesDAO
         Dim listaEspecies = daoEspecies.GetAll()
@@ -101,9 +119,6 @@ Public Class FormularioAltaAnimal
         End If
     End Sub
 
-    Private Sub FormularioAltaAnimal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 #End Region
 
 End Class
