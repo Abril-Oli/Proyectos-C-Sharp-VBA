@@ -14,7 +14,7 @@ namespace ServiciosVehiculos.DAO
     {
         private IDbConnection prepararConexion()
         {
-            string conectionString = "server=LAPTOP-M7QP70RN\\SQLEXPRESS;Database=ConcesonariaGo;Integrated Security=true";
+            string conectionString = "server=ingresesuserver\\SQLEXPRESS;Database=ConcesonariaGo;Integrated Security=true";
             //hacemos un var con el tipo de dato sqlconnection//
             SqlConnection conexion = new SqlConnection(conectionString);
             //abrimos la conexion//
