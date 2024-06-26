@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65710580-DC5D-45C0-84F0-2FC4949FA5E2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>VeterinariaCleint.My.MyApplication</StartupObject>
+    <RootNamespace>VeterinariaCleint</RootNamespace>
+    <AssemblyName>VeterinariaCleint</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>VeterinariaCleint.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>VeterinariaCleint.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormularioPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPrincipal.Designer.vb">
+      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioAccionesAnimal.Designer.vb">
+      <DependentUpon>FormularioAccionesAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioAccionesAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioAltaAnimal.Designer.vb">
+      <DependentUpon>FormularioAltaAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioAltaAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioBajaAnimal.Designer.vb">
+      <DependentUpon>FormularioBajaAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioBajaAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioAccionesCliente.Designer.vb">
+      <DependentUpon>FormularioAccionesCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioAccionesCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioAltaCliente.Designer.vb">
+      <DependentUpon>FormularioAltaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioAltaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioBajaCliente.Designer.vb">
+      <DependentUpon>FormularioBajaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioBajaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioReactivarCliente.Designer.vb">
+      <DependentUpon>FormularioReactivarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioReactivarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Especie\FormularioAccionesEspecie.Designer.vb">
+      <DependentUpon>FormularioAccionesEspecie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Especie\FormularioAccionesEspecie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Especie\FormularioAltaEspecie.Designer.vb">
+      <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Especie\FormularioAltaEspecie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormularioReportePrincipal.Designer.vb">
+      <DependentUpon>FormularioReportePrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormularioReportePrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormularioReporteSecundario.Designer.vb">
+      <DependentUpon>FormularioReporteSecundario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormularioReporteSecundario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioAccionesUsuario.Designer.vb">
+      <DependentUpon>FormularioAccionesUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioAccionesUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioAltaUsuario.Designer.vb">
+      <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioAltaUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioBajaUsuario.Designer.vb">
+      <DependentUpon>FormularioBajaUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioBajaUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioReactivarUsuario.Designer.vb">
+      <DependentUpon>FormularioReactivarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioReactivarUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Animal\FormularioAccionesAnimal.resx">
+      <DependentUpon>FormularioAccionesAnimal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Animal\FormularioAltaAnimal.resx">
+      <DependentUpon>FormularioAltaAnimal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Animal\FormularioBajaAnimal.resx">
+      <DependentUpon>FormularioBajaAnimal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\FormularioAccionesCliente.resx">
+      <DependentUpon>FormularioAccionesCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\FormularioAltaCliente.resx">
+      <DependentUpon>FormularioAltaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\FormularioBajaCliente.resx">
+      <DependentUpon>FormularioBajaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\FormularioReactivarCliente.resx">
+      <DependentUpon>FormularioReactivarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Especie\FormularioAccionesEspecie.resx">
+      <DependentUpon>FormularioAccionesEspecie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Especie\FormularioAltaEspecie.resx">
+      <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\FormularioReportePrincipal.resx">
+      <DependentUpon>FormularioReportePrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\FormularioReporteSecundario.resx">
+      <DependentUpon>FormularioReporteSecundario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuario\FormularioAccionesUsuario.resx">
+      <DependentUpon>FormularioAccionesUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuario\FormularioAltaUsuario.resx">
+      <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuario\FormularioBajaUsuario.resx">
+      <DependentUpon>FormularioBajaUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuario\FormularioReactivarUsuario.resx">
+      <DependentUpon>FormularioReactivarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\background.jpg" />
+    <Content Include="Assets\patitas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VeterinariaService\VeterinariaService.csproj">
+      <Project>{f7c35cbe-7f01-4d8e-bd38-c9a4fc15794f}</Project>
+      <Name>VeterinariaService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
