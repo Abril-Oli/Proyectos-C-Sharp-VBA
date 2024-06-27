@@ -11,20 +11,10 @@ using System.Threading;
 namespace VeterinariaService.DAO
 {
 
-    public class UsuariosDAO
+    public class UsuariosDAO : DaoGenerico
     {
         //----------------------------------- PREPARAR CONEXION -----------------------------------//
-        private IDbConnection PrepararConexion()
-        {
-            string conexionURL = "server=LAPTOP-M7QP70RN\\SQLEXPRESS;Database=VeterinariaDB;Integrated Security=true";
-
-            SqlConnection conexion = new SqlConnection(conexionURL);
-
-            conexion.Open();
-
-            return conexion;
-        }
-
+       
         //----------------------------------- VALIDAR EXISTENCIA USUARIO LOGIN -----------------------------------//
         public Usuario GetUsuarioLogin(string nombre, string clave)
         {

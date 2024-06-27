@@ -28,7 +28,7 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Txt_especieIDEditar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Txt_clienteIDEditar = New System.Windows.Forms.TextBox()
+        Me.Txt_clienteDNIEditar = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Txt_pesoEditar = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -60,6 +60,7 @@ Partial Class FormularioAccionesAnimal
         Me.Btn_busquedaAnimal = New System.Windows.Forms.Button()
         Me.Txt_idAnimal = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblClienteDNIBuscarAnimal = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -77,7 +78,7 @@ Partial Class FormularioAccionesAnimal
         Me.Btn_listarAnimales.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_listarAnimales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.Btn_listarAnimales.Location = New System.Drawing.Point(756, 18)
-        Me.Btn_listarAnimales.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_listarAnimales.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_listarAnimales.Name = "Btn_listarAnimales"
         Me.Btn_listarAnimales.Size = New System.Drawing.Size(207, 47)
         Me.Btn_listarAnimales.TabIndex = 3
@@ -91,7 +92,7 @@ Partial Class FormularioAccionesAnimal
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Location = New System.Drawing.Point(16, 405)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(732, 325)
         Me.Panel1.TabIndex = 6
@@ -106,9 +107,9 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.GroupBox3.Location = New System.Drawing.Point(21, 18)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(692, 286)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
@@ -119,7 +120,7 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.Controls.Add(Me.Txt_especieIDEditar)
         Me.GroupBox4.Controls.Add(Me.Label12)
-        Me.GroupBox4.Controls.Add(Me.Txt_clienteIDEditar)
+        Me.GroupBox4.Controls.Add(Me.Txt_clienteDNIEditar)
         Me.GroupBox4.Controls.Add(Me.Label10)
         Me.GroupBox4.Controls.Add(Me.Txt_pesoEditar)
         Me.GroupBox4.Controls.Add(Me.Label7)
@@ -129,9 +130,9 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.GroupBox4.Location = New System.Drawing.Point(27, 95)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Size = New System.Drawing.Size(644, 170)
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
@@ -140,7 +141,7 @@ Partial Class FormularioAccionesAnimal
         'Txt_especieIDEditar
         '
         Me.Txt_especieIDEditar.Location = New System.Drawing.Point(451, 86)
-        Me.Txt_especieIDEditar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_especieIDEditar.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_especieIDEditar.Name = "Txt_especieIDEditar"
         Me.Txt_especieIDEditar.Size = New System.Drawing.Size(181, 30)
         Me.Txt_especieIDEditar.TabIndex = 14
@@ -155,13 +156,13 @@ Partial Class FormularioAccionesAnimal
         Me.Label12.TabIndex = 13
         Me.Label12.Text = "Especie ID:"
         '
-        'Txt_clienteIDEditar
+        'Txt_clienteDNIEditar
         '
-        Me.Txt_clienteIDEditar.Location = New System.Drawing.Point(451, 48)
-        Me.Txt_clienteIDEditar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Txt_clienteIDEditar.Name = "Txt_clienteIDEditar"
-        Me.Txt_clienteIDEditar.Size = New System.Drawing.Size(181, 30)
-        Me.Txt_clienteIDEditar.TabIndex = 12
+        Me.Txt_clienteDNIEditar.Location = New System.Drawing.Point(451, 48)
+        Me.Txt_clienteDNIEditar.Margin = New System.Windows.Forms.Padding(4)
+        Me.Txt_clienteDNIEditar.Name = "Txt_clienteDNIEditar"
+        Me.Txt_clienteDNIEditar.Size = New System.Drawing.Size(181, 30)
+        Me.Txt_clienteDNIEditar.TabIndex = 12
         '
         'Label10
         '
@@ -169,14 +170,14 @@ Partial Class FormularioAccionesAnimal
         Me.Label10.Location = New System.Drawing.Point(331, 52)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(104, 23)
+        Me.Label10.Size = New System.Drawing.Size(148, 29)
         Me.Label10.TabIndex = 11
-        Me.Label10.Text = "Cliente ID:"
+        Me.Label10.Text = "Cliente DNI:"
         '
         'Txt_pesoEditar
         '
         Me.Txt_pesoEditar.Location = New System.Drawing.Point(128, 127)
-        Me.Txt_pesoEditar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_pesoEditar.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_pesoEditar.Name = "Txt_pesoEditar"
         Me.Txt_pesoEditar.Size = New System.Drawing.Size(181, 30)
         Me.Txt_pesoEditar.TabIndex = 10
@@ -194,7 +195,7 @@ Partial Class FormularioAccionesAnimal
         'Txt_edadEditar
         '
         Me.Txt_edadEditar.Location = New System.Drawing.Point(128, 87)
-        Me.Txt_edadEditar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_edadEditar.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_edadEditar.Name = "Txt_edadEditar"
         Me.Txt_edadEditar.Size = New System.Drawing.Size(181, 30)
         Me.Txt_edadEditar.TabIndex = 8
@@ -212,7 +213,7 @@ Partial Class FormularioAccionesAnimal
         'Txt_nombreEditar
         '
         Me.Txt_nombreEditar.Location = New System.Drawing.Point(128, 48)
-        Me.Txt_nombreEditar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_nombreEditar.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_nombreEditar.Name = "Txt_nombreEditar"
         Me.Txt_nombreEditar.Size = New System.Drawing.Size(181, 30)
         Me.Txt_nombreEditar.TabIndex = 6
@@ -230,7 +231,7 @@ Partial Class FormularioAccionesAnimal
         'Txt_editarAnimalID
         '
         Me.Txt_editarAnimalID.Location = New System.Drawing.Point(159, 46)
-        Me.Txt_editarAnimalID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_editarAnimalID.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_editarAnimalID.Name = "Txt_editarAnimalID"
         Me.Txt_editarAnimalID.Size = New System.Drawing.Size(169, 30)
         Me.Txt_editarAnimalID.TabIndex = 1
@@ -253,7 +254,7 @@ Partial Class FormularioAccionesAnimal
         Me.Btn_editarAnimal.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_editarAnimal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Btn_editarAnimal.Location = New System.Drawing.Point(361, 31)
-        Me.Btn_editarAnimal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_editarAnimal.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_editarAnimal.Name = "Btn_editarAnimal"
         Me.Btn_editarAnimal.Size = New System.Drawing.Size(299, 58)
         Me.Btn_editarAnimal.TabIndex = 4
@@ -264,7 +265,7 @@ Partial Class FormularioAccionesAnimal
         '
         Me.DGV_listaAnimales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_listaAnimales.Location = New System.Drawing.Point(756, 73)
-        Me.DGV_listaAnimales.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGV_listaAnimales.Margin = New System.Windows.Forms.Padding(4)
         Me.DGV_listaAnimales.Name = "DGV_listaAnimales"
         Me.DGV_listaAnimales.RowHeadersWidth = 51
         Me.DGV_listaAnimales.Size = New System.Drawing.Size(979, 657)
@@ -277,7 +278,7 @@ Partial Class FormularioAccionesAnimal
         Me.P_altaUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.P_altaUsuario.Controls.Add(Me.GroupBox1)
         Me.P_altaUsuario.Location = New System.Drawing.Point(16, 18)
-        Me.P_altaUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.P_altaUsuario.Margin = New System.Windows.Forms.Padding(4)
         Me.P_altaUsuario.Name = "P_altaUsuario"
         Me.P_altaUsuario.Size = New System.Drawing.Size(732, 379)
         Me.P_altaUsuario.TabIndex = 5
@@ -292,9 +293,9 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(21, 18)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(692, 342)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -303,6 +304,7 @@ Partial Class FormularioAccionesAnimal
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.LblClienteDNIBuscarAnimal)
         Me.GroupBox2.Controls.Add(Me.LBL_estadoAnimal)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.LBL_clienteID)
@@ -319,9 +321,9 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.GroupBox2.Location = New System.Drawing.Point(348, 31)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(319, 290)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
@@ -361,9 +363,9 @@ Partial Class FormularioAccionesAnimal
         Me.Label13.Location = New System.Drawing.Point(8, 174)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(104, 23)
+        Me.Label13.Size = New System.Drawing.Size(148, 29)
         Me.Label13.TabIndex = 10
-        Me.Label13.Text = "Cliente ID:"
+        Me.Label13.Text = "Cliente DNI:"
         '
         'LBL_pesoAnimal
         '
@@ -468,7 +470,7 @@ Partial Class FormularioAccionesAnimal
         Me.Btn_busquedaAnimal.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_busquedaAnimal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Btn_busquedaAnimal.Location = New System.Drawing.Point(37, 112)
-        Me.Btn_busquedaAnimal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_busquedaAnimal.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_busquedaAnimal.Name = "Btn_busquedaAnimal"
         Me.Btn_busquedaAnimal.Size = New System.Drawing.Size(288, 58)
         Me.Btn_busquedaAnimal.TabIndex = 4
@@ -478,7 +480,7 @@ Partial Class FormularioAccionesAnimal
         'Txt_idAnimal
         '
         Me.Txt_idAnimal.Location = New System.Drawing.Point(155, 50)
-        Me.Txt_idAnimal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_idAnimal.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_idAnimal.Name = "Txt_idAnimal"
         Me.Txt_idAnimal.Size = New System.Drawing.Size(169, 30)
         Me.Txt_idAnimal.TabIndex = 1
@@ -493,6 +495,15 @@ Partial Class FormularioAccionesAnimal
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Animal ID:"
         '
+        'LblClienteDNIBuscarAnimal
+        '
+        Me.LblClienteDNIBuscarAnimal.AutoSize = True
+        Me.LblClienteDNIBuscarAnimal.Location = New System.Drawing.Point(136, 174)
+        Me.LblClienteDNIBuscarAnimal.Name = "LblClienteDNIBuscarAnimal"
+        Me.LblClienteDNIBuscarAnimal.Size = New System.Drawing.Size(83, 23)
+        Me.LblClienteDNIBuscarAnimal.TabIndex = 14
+        Me.LblClienteDNIBuscarAnimal.Text = "Label15"
+        '
         'FormularioAccionesAnimal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -504,7 +515,7 @@ Partial Class FormularioAccionesAnimal
         Me.Controls.Add(Me.DGV_listaAnimales)
         Me.Controls.Add(Me.P_altaUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximumSize = New System.Drawing.Size(1766, 789)
         Me.MinimumSize = New System.Drawing.Size(1766, 789)
         Me.Name = "FormularioAccionesAnimal"
@@ -557,10 +568,11 @@ Partial Class FormularioAccionesAnimal
     Friend WithEvents Label9 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents LBL_estadoAnimal As Label
-    Friend WithEvents Txt_clienteIDEditar As TextBox
+    Friend WithEvents Txt_clienteDNIEditar As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Txt_pesoEditar As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Txt_especieIDEditar As TextBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents LblClienteDNIBuscarAnimal As Label
 End Class

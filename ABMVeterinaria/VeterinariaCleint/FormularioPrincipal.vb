@@ -80,6 +80,12 @@ Public Class FormularioPrincipal
 
         LBL_nombreUsuario.Text = $"{usuario.NombreUsuario}"
 
+        'Ocultar luego de login exitoso'
+        GroupBoxCaratula.Visible = False
+        LblTituloVete.Text = False
+        PictureBoxIconoVete.Visible = False
+
+
     End Sub
 
     '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ------------------------------'
@@ -481,6 +487,12 @@ Public Class FormularioPrincipal
     Private Sub FormularioReporteSecundario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaReporteSecundario = Nothing
     End Sub
+
+    Private Sub FormularioPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+
 
 
 #End Region

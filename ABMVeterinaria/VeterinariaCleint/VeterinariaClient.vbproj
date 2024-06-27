@@ -258,6 +258,8 @@
   <ItemGroup>
     <Content Include="Assets\background.jpg" />
     <Content Include="Assets\patitas.png" />
+    <None Include="Resources\veteW.jpg" />
+    <None Include="Resources\Add a heading %281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VeterinariaService\VeterinariaService.csproj">

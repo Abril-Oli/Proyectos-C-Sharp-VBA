@@ -63,9 +63,29 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Add_a_heading__1_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add a heading (1)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property patitas() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("patitas", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property veteW() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("veteW", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

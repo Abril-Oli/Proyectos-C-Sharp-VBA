@@ -9,21 +9,10 @@ using VeterinariaService.Modelos;
 
 namespace VeterinariaService.DAO
 {
-    public class ClientesDAO
+    public class ClientesDAO : DaoGenerico
     {
         //----------------------------------- PREPARAR CONEXION -----------------------------------//
-        private IDbConnection PrepararConexion()
-        {
-            string conexionURL = "server=LAPTOP-M7QP70RN\\SQLEXPRESS;Database=VeterinariaDB;Integrated Security=true";
-
-            SqlConnection conexion = new SqlConnection(conexionURL);
-
-            conexion.Open();
-
-            return conexion;
-        }
-
-       
+             
 
         //----------------------------------- FUNCIONES DAO  -----------------------------------//
 

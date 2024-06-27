@@ -12,12 +12,12 @@ Public Class FormularioAltaAnimal
         Dim nombre = Txt_nombreAltaAnimal.Text.ToLower
         Dim pesoS = Txt_pesoAltaAnimal.Text
         Dim edadS = Txt_edadAltaAnimal.Text
-        Dim clienteIDs = Txt_clienteIDAltaAnimal.Text
+        Dim clienteDnis = Txt_clienteDniAltaAnimal.Text
         Dim especieIDs = Txt_especieIDAltaAnimal.Text
 
-        'Validamos que los campos ID, NOMBRE, PESO, EDAD, CLIENTE ID  no sean nulos'
+        'Validamos que los campos ID, NOMBRE, PESO, EDAD, CLIENTE DNI  no sean nulos'
         If nombre = "" Or pesoS = "" Or
-            edadS = "" Or clienteIDs = "" Or
+            edadS = "" Or clienteDnis = "" Or
             especieIDs = "" Then
             MessageBox.Show("ERROR: Todos los campos son obligatorios.")
             Return
@@ -25,31 +25,31 @@ Public Class FormularioAltaAnimal
 
         'Validamos que ID, PESO, EDAD, CLIENTE ID sea numerico y positivo'
         Dim peso As Decimal
-        Dim edad, clienteID, especieID As Integer
+        Dim edad, clienteDni, especieID As Integer
 
 
         If Not Decimal.TryParse(pesoS, peso) Or peso < 0 Or
             Not Integer.TryParse(edadS, edad) Or edad < 0 Or
-            Not Integer.TryParse(clienteIDs, clienteID) Or clienteID < 0 Or
+            Not Integer.TryParse(clienteDnis, clienteDni) Or clienteDni < 0 Or
             Not Integer.TryParse(especieIDs, especieID) Or especieID < 0 Then
             MessageBox.Show("ERROR: Ingrese valores numericos positivos.")
             Return
         End If
 
-        'Validacion - Existe el ClienteID' 
+        'Validacion - Existe el Cliente DNI' 
         Dim daoClientes As New ClientesDAO
         Dim listaClientes = daoClientes.GetAll()
 
         Dim clienteExiste As Boolean = False
         For Each cliente As Cliente In listaClientes
-            If cliente.ClienteID = clienteID Then
+            If cliente.DNI = clienteDni Then
                 clienteExiste = True
                 Exit For
             End If
         Next
 
         If Not clienteExiste Then
-            MessageBox.Show("ERROR: El cliente no existe, por favor ingrese un cliente existente.")
+            MessageBox.Show("ERROR: El DNI cliente no existe, por favor ingrese un DNI cliente existente.")
             Return
         End If
 
@@ -75,7 +75,7 @@ Public Class FormularioAltaAnimal
         Dim dao As New AnimalesDAO
 
         'Si paso la validacion prosigo con la inserccion'
-        Dim nuevoAnimal As New Animal(nombre, peso, edad, clienteID, especieID)
+        Dim nuevoAnimal As New Animal(nombre, peso, edad, clienteDni, especieID)
 
         'Valido la accion'
         If dao.Insert(nuevoAnimal) Then
@@ -90,7 +90,7 @@ Public Class FormularioAltaAnimal
             Txt_nombreAltaAnimal.Text = ""
             Txt_pesoAltaAnimal.Text = ""
             Txt_edadAltaAnimal.Text = ""
-            Txt_clienteIDAltaAnimal.Text = ""
+            Txt_clienteDniAltaAnimal.Text = ""
             Txt_especieIDAltaAnimal.Text = ""
 
 
@@ -117,6 +117,10 @@ Public Class FormularioAltaAnimal
             Dim nuevoValor = PB_cargaAltaAnimal.Value + 10
             PB_cargaAltaAnimal.Value = Math.Min(nuevoValor, PB_cargaAltaAnimal.Maximum)
         End If
+    End Sub
+
+    Private Sub FormularioAltaAnimal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 
 #End Region

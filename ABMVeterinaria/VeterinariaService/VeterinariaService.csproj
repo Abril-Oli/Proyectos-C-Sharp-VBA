@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DAO\AnimalesDAO.cs" />
     <Compile Include="DAO\ClientesDAO.cs" />
+    <Compile Include="DAO\DaoGenerico.cs" />
     <Compile Include="DAO\EspeciesDAO.cs" />
     <Compile Include="DAO\UsuariosDAO.cs" />
     <Compile Include="Modelos\Animal.cs" />

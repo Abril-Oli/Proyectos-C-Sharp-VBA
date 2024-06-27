@@ -23,7 +23,6 @@ Partial Class FormularioPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormularioPrincipal))
         Me.T_login = New System.Windows.Forms.Timer(Me.components)
         Me.P_login = New System.Windows.Forms.Panel()
         Me.LBL_cargaBarra = New System.Windows.Forms.Label()
@@ -55,10 +54,10 @@ Partial Class FormularioPrincipal
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportePrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteSecundarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxIconoVete = New System.Windows.Forms.PictureBox()
         Me.LBL_nombreUsuario = New System.Windows.Forms.Label()
         Me.Btn_salirApp = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxCaratula = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -67,13 +66,12 @@ Partial Class FormularioPrincipal
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LblTituloVete = New System.Windows.Forms.Label()
         Me.P_login.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MS_menuABM.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBoxIconoVete, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBoxCaratula.SuspendLayout()
         Me.SuspendLayout()
         '
         'T_login
@@ -86,11 +84,12 @@ Partial Class FormularioPrincipal
         Me.P_login.Controls.Add(Me.LBL_cargaBarra)
         Me.P_login.Controls.Add(Me.PB_barraLogin)
         Me.P_login.Controls.Add(Me.GroupBox2)
-        Me.P_login.Location = New System.Drawing.Point(315, 198)
-        Me.P_login.MaximumSize = New System.Drawing.Size(512, 287)
-        Me.P_login.MinimumSize = New System.Drawing.Size(512, 287)
+        Me.P_login.Location = New System.Drawing.Point(420, 244)
+        Me.P_login.Margin = New System.Windows.Forms.Padding(4)
+        Me.P_login.MaximumSize = New System.Drawing.Size(683, 353)
+        Me.P_login.MinimumSize = New System.Drawing.Size(683, 353)
         Me.P_login.Name = "P_login"
-        Me.P_login.Size = New System.Drawing.Size(512, 287)
+        Me.P_login.Size = New System.Drawing.Size(683, 353)
         Me.P_login.TabIndex = 7
         '
         'LBL_cargaBarra
@@ -98,16 +97,18 @@ Partial Class FormularioPrincipal
         Me.LBL_cargaBarra.AutoSize = True
         Me.LBL_cargaBarra.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBL_cargaBarra.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.LBL_cargaBarra.Location = New System.Drawing.Point(21, 206)
+        Me.LBL_cargaBarra.Location = New System.Drawing.Point(28, 254)
+        Me.LBL_cargaBarra.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LBL_cargaBarra.Name = "LBL_cargaBarra"
-        Me.LBL_cargaBarra.Size = New System.Drawing.Size(0, 18)
+        Me.LBL_cargaBarra.Size = New System.Drawing.Size(0, 23)
         Me.LBL_cargaBarra.TabIndex = 9
         '
         'PB_barraLogin
         '
-        Me.PB_barraLogin.Location = New System.Drawing.Point(16, 236)
+        Me.PB_barraLogin.Location = New System.Drawing.Point(21, 290)
+        Me.PB_barraLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.PB_barraLogin.Name = "PB_barraLogin"
-        Me.PB_barraLogin.Size = New System.Drawing.Size(484, 40)
+        Me.PB_barraLogin.Size = New System.Drawing.Size(645, 49)
         Me.PB_barraLogin.TabIndex = 5
         '
         'GroupBox2
@@ -119,9 +120,11 @@ Partial Class FormularioPrincipal
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 22)
+        Me.GroupBox2.Location = New System.Drawing.Point(21, 27)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(484, 167)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox2.Size = New System.Drawing.Size(645, 206)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Login"
@@ -132,43 +135,48 @@ Partial Class FormularioPrincipal
         Me.Btn_Login.FlatAppearance.BorderSize = 0
         Me.Btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Login.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
-        Me.Btn_Login.Location = New System.Drawing.Point(153, 111)
+        Me.Btn_Login.Location = New System.Drawing.Point(204, 137)
+        Me.Btn_Login.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_Login.Name = "Btn_Login"
-        Me.Btn_Login.Size = New System.Drawing.Size(170, 47)
+        Me.Btn_Login.Size = New System.Drawing.Size(227, 58)
         Me.Btn_Login.TabIndex = 4
         Me.Btn_Login.Text = "I N G R E S A R"
         Me.Btn_Login.UseVisualStyleBackColor = False
         '
         'Txt_claveLogin
         '
-        Me.Txt_claveLogin.Location = New System.Drawing.Point(125, 74)
+        Me.Txt_claveLogin.Location = New System.Drawing.Point(167, 91)
+        Me.Txt_claveLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_claveLogin.Name = "Txt_claveLogin"
         Me.Txt_claveLogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Txt_claveLogin.Size = New System.Drawing.Size(305, 31)
+        Me.Txt_claveLogin.Size = New System.Drawing.Size(405, 37)
         Me.Txt_claveLogin.TabIndex = 3
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(34, 74)
+        Me.Label10.Location = New System.Drawing.Point(45, 91)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(66, 23)
+        Me.Label10.Size = New System.Drawing.Size(81, 28)
         Me.Label10.TabIndex = 2
         Me.Label10.Text = "Clave"
         '
         'Txt_nombreLogin
         '
-        Me.Txt_nombreLogin.Location = New System.Drawing.Point(125, 37)
+        Me.Txt_nombreLogin.Location = New System.Drawing.Point(167, 46)
+        Me.Txt_nombreLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_nombreLogin.Name = "Txt_nombreLogin"
-        Me.Txt_nombreLogin.Size = New System.Drawing.Size(305, 31)
+        Me.Txt_nombreLogin.Size = New System.Drawing.Size(405, 37)
         Me.Txt_nombreLogin.TabIndex = 1
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(34, 37)
+        Me.Label9.Location = New System.Drawing.Point(45, 46)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(85, 23)
+        Me.Label9.Size = New System.Drawing.Size(107, 28)
         Me.Label9.TabIndex = 0
         Me.Label9.Text = "Nombre"
         '
@@ -176,10 +184,11 @@ Partial Class FormularioPrincipal
         '
         Me.MS_menuABM.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.MS_menuABM.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MS_menuABM.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MS_menuABM.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltasToolStripMenuItem, Me.BajasToolStripMenuItem, Me.BusquedaToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.InformesToolStripMenuItem})
         Me.MS_menuABM.Location = New System.Drawing.Point(0, 0)
         Me.MS_menuABM.Name = "MS_menuABM"
-        Me.MS_menuABM.Size = New System.Drawing.Size(1149, 29)
+        Me.MS_menuABM.Size = New System.Drawing.Size(1532, 36)
         Me.MS_menuABM.TabIndex = 8
         Me.MS_menuABM.Text = "MenuStrip1"
         Me.MS_menuABM.Visible = False
@@ -188,163 +197,165 @@ Partial Class FormularioPrincipal
         '
         Me.AltasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeUsuarioToolStripMenuItem, Me.BajaDeUsuarioToolStripMenuItem, Me.AToolStripMenuItem, Me.ReactivarUsuarioToolStripMenuItem})
         Me.AltasToolStripMenuItem.Name = "AltasToolStripMenuItem"
-        Me.AltasToolStripMenuItem.Size = New System.Drawing.Size(84, 25)
+        Me.AltasToolStripMenuItem.Size = New System.Drawing.Size(101, 32)
         Me.AltasToolStripMenuItem.Text = "Usuarios"
         '
         'AltaDeUsuarioToolStripMenuItem
         '
         Me.AltaDeUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.AltaDeUsuarioToolStripMenuItem.Name = "AltaDeUsuarioToolStripMenuItem"
-        Me.AltaDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(217, 26)
+        Me.AltaDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(264, 28)
         Me.AltaDeUsuarioToolStripMenuItem.Text = "Alta de usuario"
         '
         'BajaDeUsuarioToolStripMenuItem
         '
         Me.BajaDeUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.BajaDeUsuarioToolStripMenuItem.Name = "BajaDeUsuarioToolStripMenuItem"
-        Me.BajaDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(217, 26)
+        Me.BajaDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(264, 28)
         Me.BajaDeUsuarioToolStripMenuItem.Text = "Baja de usuario"
         '
         'AToolStripMenuItem
         '
         Me.AToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.AToolStripMenuItem.Name = "AToolStripMenuItem"
-        Me.AToolStripMenuItem.Size = New System.Drawing.Size(217, 26)
+        Me.AToolStripMenuItem.Size = New System.Drawing.Size(264, 28)
         Me.AToolStripMenuItem.Text = "Acciones"
         '
         'ReactivarUsuarioToolStripMenuItem
         '
         Me.ReactivarUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.ReactivarUsuarioToolStripMenuItem.Name = "ReactivarUsuarioToolStripMenuItem"
-        Me.ReactivarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(217, 26)
+        Me.ReactivarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(264, 28)
         Me.ReactivarUsuarioToolStripMenuItem.Text = "Reactivar Usuario"
         '
         'BajasToolStripMenuItem
         '
         Me.BajasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeClienteToolStripMenuItem, Me.BajaDeClienteToolStripMenuItem, Me.AccionesClientesToolStripMenuItem, Me.ReactivarClienteToolStripMenuItem})
         Me.BajasToolStripMenuItem.Name = "BajasToolStripMenuItem"
-        Me.BajasToolStripMenuItem.Size = New System.Drawing.Size(84, 25)
+        Me.BajasToolStripMenuItem.Size = New System.Drawing.Size(101, 32)
         Me.BajasToolStripMenuItem.Text = "Clientes"
         '
         'AltaDeClienteToolStripMenuItem
         '
         Me.AltaDeClienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.AltaDeClienteToolStripMenuItem.Name = "AltaDeClienteToolStripMenuItem"
-        Me.AltaDeClienteToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.AltaDeClienteToolStripMenuItem.Size = New System.Drawing.Size(261, 28)
         Me.AltaDeClienteToolStripMenuItem.Text = "Alta de cliente"
         '
         'BajaDeClienteToolStripMenuItem
         '
         Me.BajaDeClienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.BajaDeClienteToolStripMenuItem.Name = "BajaDeClienteToolStripMenuItem"
-        Me.BajaDeClienteToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.BajaDeClienteToolStripMenuItem.Size = New System.Drawing.Size(261, 28)
         Me.BajaDeClienteToolStripMenuItem.Text = "Baja de cliente"
         '
         'AccionesClientesToolStripMenuItem
         '
         Me.AccionesClientesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.AccionesClientesToolStripMenuItem.Name = "AccionesClientesToolStripMenuItem"
-        Me.AccionesClientesToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.AccionesClientesToolStripMenuItem.Size = New System.Drawing.Size(261, 28)
         Me.AccionesClientesToolStripMenuItem.Text = "Acciones"
         '
         'ReactivarClienteToolStripMenuItem
         '
         Me.ReactivarClienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.ReactivarClienteToolStripMenuItem.Name = "ReactivarClienteToolStripMenuItem"
-        Me.ReactivarClienteToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.ReactivarClienteToolStripMenuItem.Size = New System.Drawing.Size(261, 28)
         Me.ReactivarClienteToolStripMenuItem.Text = "Reactivar cliente"
         '
         'BusquedaToolStripMenuItem
         '
         Me.BusquedaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeAnimalToolStripMenuItem, Me.BajaDeAnimalToolStripMenuItem, Me.AccionesToolStripMenuItem1})
         Me.BusquedaToolStripMenuItem.Name = "BusquedaToolStripMenuItem"
-        Me.BusquedaToolStripMenuItem.Size = New System.Drawing.Size(93, 25)
+        Me.BusquedaToolStripMenuItem.Size = New System.Drawing.Size(113, 32)
         Me.BusquedaToolStripMenuItem.Text = "Animales"
         '
         'AltaDeAnimalToolStripMenuItem
         '
         Me.AltaDeAnimalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.AltaDeAnimalToolStripMenuItem.Name = "AltaDeAnimalToolStripMenuItem"
-        Me.AltaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
+        Me.AltaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(242, 28)
         Me.AltaDeAnimalToolStripMenuItem.Text = "Alta de animal"
         '
         'BajaDeAnimalToolStripMenuItem
         '
         Me.BajaDeAnimalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.BajaDeAnimalToolStripMenuItem.Name = "BajaDeAnimalToolStripMenuItem"
-        Me.BajaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
+        Me.BajaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(242, 28)
         Me.BajaDeAnimalToolStripMenuItem.Text = "Baja de animal"
         '
         'AccionesToolStripMenuItem1
         '
         Me.AccionesToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.AccionesToolStripMenuItem1.Name = "AccionesToolStripMenuItem1"
-        Me.AccionesToolStripMenuItem1.Size = New System.Drawing.Size(196, 26)
+        Me.AccionesToolStripMenuItem1.Size = New System.Drawing.Size(242, 28)
         Me.AccionesToolStripMenuItem1.Text = "Acciones"
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeEspecieToolStripMenuItem, Me.AccionesToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(87, 25)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(107, 32)
         Me.ReportesToolStripMenuItem.Text = "Especies"
         '
         'AltaDeEspecieToolStripMenuItem
         '
         Me.AltaDeEspecieToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.AltaDeEspecieToolStripMenuItem.Name = "AltaDeEspecieToolStripMenuItem"
-        Me.AltaDeEspecieToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
+        Me.AltaDeEspecieToolStripMenuItem.Size = New System.Drawing.Size(249, 28)
         Me.AltaDeEspecieToolStripMenuItem.Text = "Alta de Especie"
         '
         'AccionesToolStripMenuItem
         '
         Me.AccionesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.AccionesToolStripMenuItem.Name = "AccionesToolStripMenuItem"
-        Me.AccionesToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
+        Me.AccionesToolStripMenuItem.Size = New System.Drawing.Size(249, 28)
         Me.AccionesToolStripMenuItem.Text = "Acciones"
         '
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportePrincipalToolStripMenuItem, Me.ReporteSecundarioToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(88, 25)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(106, 32)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'ReportePrincipalToolStripMenuItem
         '
         Me.ReportePrincipalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.ReportePrincipalToolStripMenuItem.Name = "ReportePrincipalToolStripMenuItem"
-        Me.ReportePrincipalToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ReportePrincipalToolStripMenuItem.Size = New System.Drawing.Size(286, 28)
         Me.ReportePrincipalToolStripMenuItem.Text = "Reporte principal"
         '
         'ReporteSecundarioToolStripMenuItem
         '
         Me.ReporteSecundarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.ReporteSecundarioToolStripMenuItem.Name = "ReporteSecundarioToolStripMenuItem"
-        Me.ReporteSecundarioToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ReporteSecundarioToolStripMenuItem.Size = New System.Drawing.Size(286, 28)
         Me.ReporteSecundarioToolStripMenuItem.Text = "Reporte secundario"
         '
-        'PictureBox1
+        'PictureBoxIconoVete
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
-        Me.PictureBox1.BackgroundImage = Global.VeterinariaCleint.My.Resources.Resources.patitas
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 60)
-        Me.PictureBox1.MaximumSize = New System.Drawing.Size(134, 126)
-        Me.PictureBox1.MinimumSize = New System.Drawing.Size(134, 126)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(134, 126)
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
+        Me.PictureBoxIconoVete.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
+        Me.PictureBoxIconoVete.BackgroundImage = Global.VeterinariaCleint.My.Resources.Resources.patitas
+        Me.PictureBoxIconoVete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBoxIconoVete.Location = New System.Drawing.Point(20, 34)
+        Me.PictureBoxIconoVete.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBoxIconoVete.MaximumSize = New System.Drawing.Size(179, 155)
+        Me.PictureBoxIconoVete.MinimumSize = New System.Drawing.Size(179, 155)
+        Me.PictureBoxIconoVete.Name = "PictureBoxIconoVete"
+        Me.PictureBoxIconoVete.Size = New System.Drawing.Size(179, 155)
+        Me.PictureBoxIconoVete.TabIndex = 10
+        Me.PictureBoxIconoVete.TabStop = False
         '
         'LBL_nombreUsuario
         '
         Me.LBL_nombreUsuario.AutoSize = True
         Me.LBL_nombreUsuario.Font = New System.Drawing.Font("Century Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBL_nombreUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.LBL_nombreUsuario.Location = New System.Drawing.Point(463, 60)
+        Me.LBL_nombreUsuario.Location = New System.Drawing.Point(617, 74)
+        Me.LBL_nombreUsuario.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LBL_nombreUsuario.Name = "LBL_nombreUsuario"
-        Me.LBL_nombreUsuario.Size = New System.Drawing.Size(0, 63)
+        Me.LBL_nombreUsuario.Size = New System.Drawing.Size(0, 80)
         Me.LBL_nombreUsuario.TabIndex = 11
         Me.LBL_nombreUsuario.Visible = False
         '
@@ -356,41 +367,45 @@ Partial Class FormularioPrincipal
         Me.Btn_salirApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_salirApp.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_salirApp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
-        Me.Btn_salirApp.Location = New System.Drawing.Point(974, 535)
+        Me.Btn_salirApp.Location = New System.Drawing.Point(1299, 658)
+        Me.Btn_salirApp.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_salirApp.Name = "Btn_salirApp"
-        Me.Btn_salirApp.Size = New System.Drawing.Size(163, 56)
+        Me.Btn_salirApp.Size = New System.Drawing.Size(217, 69)
         Me.Btn_salirApp.TabIndex = 12
         Me.Btn_salirApp.Text = "S A L I R"
         Me.Btn_salirApp.UseVisualStyleBackColor = False
         Me.Btn_salirApp.Visible = False
         '
-        'GroupBox1
+        'GroupBoxCaratula
         '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 491)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(438, 100)
-        Me.GroupBox1.TabIndex = 13
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "ABM Veterinaria"
+        Me.GroupBoxCaratula.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBoxCaratula.Controls.Add(Me.Label12)
+        Me.GroupBoxCaratula.Controls.Add(Me.Label11)
+        Me.GroupBoxCaratula.Controls.Add(Me.Label8)
+        Me.GroupBoxCaratula.Controls.Add(Me.Label7)
+        Me.GroupBoxCaratula.Controls.Add(Me.Label6)
+        Me.GroupBoxCaratula.Controls.Add(Me.Label5)
+        Me.GroupBoxCaratula.Controls.Add(Me.Label4)
+        Me.GroupBoxCaratula.Controls.Add(Me.Label3)
+        Me.GroupBoxCaratula.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBoxCaratula.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.GroupBoxCaratula.Location = New System.Drawing.Point(16, 604)
+        Me.GroupBoxCaratula.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBoxCaratula.Name = "GroupBoxCaratula"
+        Me.GroupBoxCaratula.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBoxCaratula.Size = New System.Drawing.Size(584, 123)
+        Me.GroupBoxCaratula.TabIndex = 13
+        Me.GroupBoxCaratula.TabStop = False
+        Me.GroupBoxCaratula.Text = "ABM Veterinaria"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(297, 44)
+        Me.Label12.Location = New System.Drawing.Point(396, 54)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(114, 17)
+        Me.Label12.Size = New System.Drawing.Size(146, 21)
         Me.Label12.TabIndex = 7
         Me.Label12.Text = "Programacion III"
         '
@@ -398,9 +413,10 @@ Partial Class FormularioPrincipal
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(238, 45)
+        Me.Label11.Location = New System.Drawing.Point(317, 55)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(62, 16)
+        Me.Label11.Size = New System.Drawing.Size(75, 19)
         Me.Label11.TabIndex = 6
         Me.Label11.Text = "Materia:"
         '
@@ -408,9 +424,10 @@ Partial Class FormularioPrincipal
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(6, 23)
+        Me.Label8.Location = New System.Drawing.Point(8, 28)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(84, 16)
+        Me.Label8.Size = New System.Drawing.Size(104, 19)
         Me.Label8.TabIndex = 5
         Me.Label8.Text = "Integrantes:"
         '
@@ -418,9 +435,10 @@ Partial Class FormularioPrincipal
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(297, 23)
+        Me.Label7.Location = New System.Drawing.Point(396, 28)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 17)
+        Me.Label7.Size = New System.Drawing.Size(125, 21)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "Niglio, Gabriel"
         '
@@ -428,9 +446,10 @@ Partial Class FormularioPrincipal
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(238, 23)
+        Me.Label6.Location = New System.Drawing.Point(317, 28)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(62, 16)
+        Me.Label6.Size = New System.Drawing.Size(80, 19)
         Me.Label6.TabIndex = 3
         Me.Label6.Text = "Profesor:"
         '
@@ -438,9 +457,10 @@ Partial Class FormularioPrincipal
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(96, 67)
+        Me.Label5.Location = New System.Drawing.Point(128, 82)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(132, 17)
+        Me.Label5.Size = New System.Drawing.Size(171, 21)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Sio Cordich, Matias"
         '
@@ -448,9 +468,10 @@ Partial Class FormularioPrincipal
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(96, 44)
+        Me.Label4.Location = New System.Drawing.Point(128, 54)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(90, 17)
+        Me.Label4.Size = New System.Drawing.Size(116, 21)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Olivera, Abril"
         '
@@ -458,54 +479,46 @@ Partial Class FormularioPrincipal
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(96, 23)
+        Me.Label3.Location = New System.Drawing.Point(128, 28)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(136, 17)
+        Me.Label3.Size = New System.Drawing.Size(173, 21)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Buggenthin, Nicolas"
         '
-        'Label1
+        'LblTituloVete
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(152, 60)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(311, 63)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Bienvenidx"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(152, 123)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(543, 63)
-        Me.Label2.TabIndex = 15
-        Me.Label2.Text = "a Patitas Veterinaria"
+        Me.LblTituloVete.AutoSize = True
+        Me.LblTituloVete.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
+        Me.LblTituloVete.Font = New System.Drawing.Font("Century Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTituloVete.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.LblTituloVete.Location = New System.Drawing.Point(207, 34)
+        Me.LblTituloVete.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblTituloVete.Name = "LblTituloVete"
+        Me.LblTituloVete.Size = New System.Drawing.Size(638, 80)
+        Me.LblTituloVete.TabIndex = 15
+        Me.LblTituloVete.Text = " Patitas Veterinaria"
         '
         'FormularioPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.VeterinariaCleint.My.Resources.Resources.veteW
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1149, 603)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(1532, 742)
+        Me.Controls.Add(Me.GroupBoxCaratula)
         Me.Controls.Add(Me.Btn_salirApp)
         Me.Controls.Add(Me.LBL_nombreUsuario)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PictureBoxIconoVete)
         Me.Controls.Add(Me.P_login)
         Me.Controls.Add(Me.MS_menuABM)
+        Me.Controls.Add(Me.LblTituloVete)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.IsMdiContainer = True
-        Me.MinimumSize = New System.Drawing.Size(1169, 646)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MinimumSize = New System.Drawing.Size(1551, 783)
         Me.Name = "FormularioPrincipal"
         Me.Text = "ABM Veterinaria"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -515,9 +528,9 @@ Partial Class FormularioPrincipal
         Me.GroupBox2.PerformLayout()
         Me.MS_menuABM.ResumeLayout(False)
         Me.MS_menuABM.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBoxIconoVete, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBoxCaratula.ResumeLayout(False)
+        Me.GroupBoxCaratula.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -538,12 +551,11 @@ Partial Class FormularioPrincipal
     Friend WithEvents BajasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BusquedaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBoxIconoVete As PictureBox
     Friend WithEvents LBL_nombreUsuario As Label
     Friend WithEvents Btn_salirApp As Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBoxCaratula As GroupBox
+    Friend WithEvents LblTituloVete As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label

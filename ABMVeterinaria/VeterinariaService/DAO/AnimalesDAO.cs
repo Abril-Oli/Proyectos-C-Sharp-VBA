@@ -10,19 +10,10 @@ using System.Net.Sockets;
 
 namespace VeterinariaService.DAO
 {
-    public class AnimalesDAO
+    public class AnimalesDAO : DaoGenerico
     {
         //----------------------------------- PREPARAR CONEXION -----------------------------------//
-        private IDbConnection PrepararConexion()
-        {
-            string conexionURL = "server=LAPTOP-M7QP70RN\\SQLEXPRESS;Database=VeterinariaDB;Integrated Security=true";
 
-            SqlConnection conexion = new SqlConnection(conexionURL);
-
-            conexion.Open();
-
-            return conexion;
-        }
 
         //----------------------------------- FUNCIONES DAO  -----------------------------------//
 
@@ -36,7 +27,7 @@ namespace VeterinariaService.DAO
             IDbCommand comando = conexion.CreateCommand();
 
             //en base a la tabla Clientes, agregamos los atributos//
-            comando.CommandText = "SELECT AnimalID, Nombre, Peso, Edad, ClienteID, EspecieID, Estado FROM Animales";
+            comando.CommandText = "SELECT AnimalID, Nombre, Peso, Edad, ClienteDNI, EspecieID, Estado FROM Animales";
 
             //creamos el comando lector, para poder leer la tabla entera//
 
@@ -55,7 +46,7 @@ namespace VeterinariaService.DAO
                     Nombre = lector.GetString(1),
                     Peso = lector.GetDecimal(2),
                     Edad = lector.GetInt32(3),
-                    ClienteID = lector.GetInt32(4),
+                    ClienteDNI = lector.GetInt32(4),
                     EspecieID = lector.IsDBNull(5) ? 0 : lector.GetInt32(5),
                     Estado = lector.GetString(6),
                 };
@@ -75,7 +66,7 @@ namespace VeterinariaService.DAO
         {
 
             //Pasaje de datos y valores a la query//
-            string query = $"SELECT AnimalID, Nombre, Peso, Edad, ClienteID, EspecieID, Estado FROM Animales WHERE AnimalID={ID}";
+            string query = $"SELECT AnimalID, Nombre, Peso, Edad, ClienteDNI, EspecieID, Estado FROM Animales WHERE AnimalID={ID}";
 
             // preparamos la conexion //
             IDbConnection conexion = this.PrepararConexion();
@@ -100,7 +91,7 @@ namespace VeterinariaService.DAO
                     Nombre = lector.GetString(1),
                     Peso = lector.GetDecimal(2),
                     Edad = lector.GetInt32(3),
-                    ClienteID = lector.GetInt32(4),
+                    ClienteDNI = lector.GetInt32(4),
                     EspecieID = lector.GetInt32(5),
                     Estado = lector.GetString(6),
                 };
@@ -123,7 +114,7 @@ namespace VeterinariaService.DAO
             }
 
             //creamos Query//
-            string query = $"INSERT INTO Animales (Nombre, Peso, Edad, ClienteID, EspecieID) VALUES ('{nuevoA.Nombre}', {nuevoA.Peso}, {nuevoA.Edad}, {nuevoA.ClienteID}, {nuevoA.EspecieID})";
+            string query = $"INSERT INTO Animales (Nombre, Peso, Edad, ClienteDNI, EspecieID) VALUES ('{nuevoA.Nombre}', {nuevoA.Peso}, {nuevoA.Edad}, {nuevoA.ClienteDNI}, {nuevoA.EspecieID})";
 
             //preparamos la conexion//
             IDbConnection conexion = this.PrepararConexion();
@@ -144,11 +135,11 @@ namespace VeterinariaService.DAO
         }
 
         //--------------- UPDATE ---------------//
-        public void Update(long ID, string nombre, decimal peso, int edad, long clienteID, long especieID)
+        public void Update(long ID, string nombre, decimal peso, int edad, long DNI, long especieID)
         {
             //pasaje de datos y valores a la query//
 
-            string query = $"UPDATE Animales SET Nombre = '{nombre}', Peso = {peso}, Edad = {edad}, ClienteID = {clienteID}, EspecieID = {especieID} WHERE AnimalID = {ID} AND Estado = 'Vivo';";
+            string query = $"UPDATE Animales SET Nombre = '{nombre}', Peso = {peso}, Edad = {edad}, ClienteDNI = {DNI}, EspecieID = {especieID} WHERE AnimalID = {ID} AND Estado = 'Vivo';";
 
             //preparamos la conexion//
             IDbConnection conexion = this.PrepararConexion();
@@ -225,38 +216,39 @@ namespace VeterinariaService.DAO
         //--------------- REPORTE SECUNDARIO ---------------//
         public DataTable GetReporteSecundario()
         {
-            string query = "SELECT " +
-                           "    c.Nombre AS Cliente, " +
-                           "    COUNT(a.AnimalID) AS CantidadAnimales " +
-                           "FROM " +
-                           "    Animales a " +
-                           "JOIN " +
-                           "    Clientes c ON a.ClienteID = c.ClienteID " +
-                           "GROUP BY " +
-                           "    c.Nombre " +
-                           "ORDER BY " +
-                           "    CantidadAnimales ASC;";
+            string query =  "SELECT " +
+               "    c.Nombre AS Cliente, " +
+               "    COUNT(a.AnimalID) AS CantidadAnimales " +
+               "FROM " +
+               "    Animales a " +
+               "JOIN " +
+               "    Clientes c ON a.ClienteDNI = c.DNI " +
+               "GROUP BY " +
+               "    c.Nombre " +
+               "ORDER BY " +
+               "    CantidadAnimales ASC;";
 
             //Preparamos la conexion//
-            IDbConnection conexion = this.PrepararConexion();
+            using (IDbConnection conexion = this.PrepararConexion())
+            {
+                //Creamos el comando//
+                var comando = conexion.CreateCommand();
 
-            //Creamos el comando//
-            var comando = conexion.CreateCommand();
+                // Le pasamos la query al comando//
+                comando.CommandText = query;
 
-            // Le pasamos la query al comando//
-            comando.CommandText = query;
+                // Creamos el ADAPTADOR//
+                SqlDataAdapter adaptador = new SqlDataAdapter((SqlCommand)comando);
 
-            // Creamos el ADAPTADOR//
-            SqlDataAdapter adaptador = new SqlDataAdapter((SqlCommand)comando);
+                // Creamos la DataTable//
+                DataTable dt = new DataTable();
 
-            // Creamos la DataTable//
-            DataTable dt = new DataTable();
+                // Llenamos con los valores del ADAPTOR a la DataTable//
+                adaptador.Fill(dt);
 
-            // Llenamos con los valores del ADAPTOR a la DataTable//
-            adaptador.Fill(dt);
-
-            // Devolvemos la DataTable
-            return dt;
+                // Devolvemos la DataTable
+                return dt;
+            }
         }
 
 
